@@ -1,13 +1,27 @@
+import { width } from '@mui/system';
 import React from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function StartPage() {
   return (
     <div className="container">
-      <img src="#" alt="start_image" />
+      <div className="headImg" style={{ width: '100%', height: '400px' }}>
+        <div
+          className="centered"
+          style={{
+            color: 'white', backgroundColor: '#8d776a', position: 'absolute', top: '43%', left: '50%', transform: 'translate(-50%, -50%)',
+          }}
+        >
+          <h1 style={{ marginBottom: '0' }}>
+            ELBRUS/
+            <br />
+            ALBUM
+          </h1>
+        </div>
+        <img src="./images/startpageHead.jpg" alt="start_image" style={{ width: '100%', height: '100%' }} />
+      </div>
       <div className="about">
-        <h1>ELBRUS/ALBUM</h1>
-        <p>Добро пожаловать!</p>
+        <h2 style={{ textAlign: 'center' }}>Добро пожаловать!</h2>
         <div>
           <p>ELBRUS/ALBUMS - веб приложение, позволяющее полльзователю:</p>
           <ul>
@@ -17,8 +31,8 @@ export default function StartPage() {
           </ul>
         </div>
 
-        <div>
-          <h3>
+        <div style={{ textAlign: 'center' }}>
+          <h4>
             <Link to="/auth">Войдите</Link>
             {' '}
             или
@@ -26,7 +40,7 @@ export default function StartPage() {
             <Link to="/reg">Зарегистрируйтесь</Link>
             {' '}
             для начала работы с ELBRUS/ALBUMS.
-          </h3>
+          </h4>
         </div>
       </div>
     </div>
