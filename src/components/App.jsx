@@ -5,8 +5,11 @@ import StartPage from './main/StartPage';
 import RegPage from './auth/RegPage';
 import AuthPage from './auth/AuthPage';
 import HomePage from './main/HomePage';
+import PhotoList from './photo/PhotoList';
 
-export default function App({ user, albums, photos }) {
+export default function App({
+  user, albums, photos, oneAlbumPhoto,
+}) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
@@ -16,6 +19,7 @@ export default function App({ user, albums, photos }) {
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
         <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
         <Route path="/home" element={<HomePage allAlbums={albums} />} />
+        <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} />} />
       </Routes>
     </>
   );
