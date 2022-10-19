@@ -16,7 +16,15 @@ router.get('/auth', (req, res) => {
 router.get('/home', async (req, res) => {
   const albums = await Album.findAll();
   // const photos = await Photo.findAll({ where: { albumid: albums.id } });
-  const initState = { albums};
+  const initState = { albums };
+  res.render('Layout', initState);
+});
+router.get('/home/album/:albumId', async (req, res) => {
+  const { albumId } = req.params;
+  // console.log('hvhvhvhhvvh', albumId);
+  const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
+  const initState = { oneAlbumPhoto };
+  // console.log('somehshsh', oneAlbumPhoto);
   res.render('Layout', initState);
 });
 
