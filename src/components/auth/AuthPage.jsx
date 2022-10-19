@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function RegPage({ setCurrentUser }) {
+export default function AuthPage({ setCurrentUser }) {
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/auth/reg', {
+    const response = await fetch('/auth/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -13,23 +14,20 @@ export default function RegPage({ setCurrentUser }) {
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
 
+    const data = await response.json();
     if (response.ok) {
-      const data = await response.json();
       setCurrentUser(data);
       navigate('/');
+    } else {
+      console.log(data.message);
+      setError(data.message);
     }
   };
-
   return (
     <div>
-      <h1>Reg</h1>
+      <h1>Auth</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Name
-            <input name="name" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          </label>
-        </div>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
