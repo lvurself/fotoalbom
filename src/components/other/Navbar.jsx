@@ -47,9 +47,9 @@ export default function Navbar({ setCurrentUser, currentUser }) {
               <li className="nav-item">
                 <a onClick={logoutHandler} className="nav-link" href="/logout">Выход</a>
               </li>
-              {/* <li className="nav-item">
-              {currentUser.name}
-            </li> */}
+              <li className="nav-item">
+                <p className="nav-link">{currentUser.name}</p>
+              </li>
             </>
             )}
           </ul>
