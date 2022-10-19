@@ -12,4 +12,5 @@ router.post('/reg', async (req, res) => {
   }
 });
 
+
 export default router;
