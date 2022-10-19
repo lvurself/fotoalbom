@@ -1,10 +1,10 @@
 import React from 'react';
 import OneAlbum from './OneAlbum';
 
-export default function AlbumList({ albums }) {
+export default function AlbumList({ allAlbums }) {
   return (
     <div>
-      {albums.map((el) => <OneAlbum album={el} key={el.id} />)}
+      {allAlbums.map((el) => <OneAlbum album={el} key={el.id} />)}
     </div>
   );
 }

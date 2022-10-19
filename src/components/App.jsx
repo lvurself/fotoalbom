@@ -6,7 +6,7 @@ import RegPage from './auth/RegPage';
 import AuthPage from './auth/AuthPage';
 import HomePage from './main/HomePage';
 
-export default function App({ user }) {
+export default function App({ user, albums, photos }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
@@ -15,7 +15,7 @@ export default function App({ user }) {
         <Route path="/" element={<StartPage />} />
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
         <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/home" element={<HomePage allAlbums={albums} />} />
       </Routes>
     </>
   );

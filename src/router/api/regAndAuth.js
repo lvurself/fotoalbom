@@ -16,6 +16,7 @@ router.post('/reg', async (req, res) => {
   }
 });
 
+
 router.post('/auth', async (req, res) => {
 //   const { email, password } = req.body;
 //   if (!email || !password) return res.status(400).json({ message: 'email or password not valid' });
@@ -48,5 +49,6 @@ router.get('/logout', async (req, res) => {
   req.session.destroy();
   res.sendStatus(200);
 });
+
 
 export default router;
