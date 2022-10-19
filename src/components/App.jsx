@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Routes } from 'react-router-dom';
+import Navbar from './other/Navbar';
 
-export default function App() {
+export default function App({ user }) {
+  const [currentuser, setCurrentUser] = useState(user || null);
   return (
-    <div>hello world</div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route />
+      </Routes>
+    </>
   );
 }
