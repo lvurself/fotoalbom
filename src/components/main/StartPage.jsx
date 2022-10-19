@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export default function StartPage() {
   return (
     <div className="container">
-      <div className="headImg" style={{ width: '100%', height: '400px' }}>
+      <div className="headImg" style={{ width: '100%', height: '400px', position: 'relative' }}>
         <div
           className="centered"
           style={{
-            color: 'white', backgroundColor: '#8d776a', position: 'absolute', top: '43%', left: '50%', transform: 'translate(-50%, -50%)',
+            color: 'white', backgroundColor: '#8d776a', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
           }}
         >
           <h1 style={{ marginBottom: '0' }}>
