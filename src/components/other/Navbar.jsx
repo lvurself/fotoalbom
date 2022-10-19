@@ -5,10 +5,11 @@ export default function Navbar({ setCurrentUser, currentUser }) {
   const navigate = useNavigate();
   const logoutHandler = async (e) => {
     e.preventDefault();
-    (await fetch('/auth/logout')).then((res) => {
-      if (res.ok) { setCurrentUser(null); }
+    const response = await fetch('/auth/logout');
+    if (response.ok) {
+      setCurrentUser(null);
       navigate('/');
-    });
+    }
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,11 +45,11 @@ export default function Navbar({ setCurrentUser, currentUser }) {
                 <a className="nav-link active" aria-current="page" href="#">Create album</a>
               </li>
               <li className="nav-item">
-                <a onClick={logoutHandler} className="nav-link active" aria-current="page" href="/">Выйти</a>
+                <a onClick={logoutHandler} className="nav-link" href="/logout">Выход</a>
               </li>
-              {/* <li className="nav-item">
-              {currentUser.name}
-            </li> */}
+              <li className="nav-item">
+                <p className="nav-link">{currentUser.name}</p>
+              </li>
             </>
             )}
           </ul>
