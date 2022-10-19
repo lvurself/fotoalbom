@@ -8,6 +8,8 @@ import customRender from './utils/customRender';
 import authCheck from './middlewares/authCheck';
 import indexRouter from './router/render/renderRouter';
 
+require('dotenv').config();
+
 const app = express();
 const PORT = process.env.PORT || 3005;
 const FileStore = store(session);
