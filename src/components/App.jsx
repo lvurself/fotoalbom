@@ -3,14 +3,14 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './other/Navbar';
 import StartPage from './main/StartPage';
 import RegPage from './auth/RegPage';
-import AuthPage from './auth/AuthPAge';
+import AuthPage from './auth/AuthPage';
 import HomePage from './main/HomePage';
 
 export default function App({ user }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
-      <Navbar currentuser={currentuser} setCurrentUser={setCurrentUser} />
+      <Navbar currentUser={currentuser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />

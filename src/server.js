@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const sessionConfig = {
-  name: 'sid',
+  name: 'user_sid',
   store: new FileStore(),
   secret: 'vndsjn',
   resave: false,
