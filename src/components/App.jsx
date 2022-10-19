@@ -10,11 +10,11 @@ export default function App({ user }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
-      <Navbar />
+      <Navbar currentuser={currentuser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="/reg" element={<RegPage />} />
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
+        <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
     </>

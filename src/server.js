@@ -7,6 +7,7 @@ import path from 'path';
 import customRender from './utils/customRender';
 import authCheck from './middlewares/authCheck';
 import indexRouter from './router/render/renderRouter';
+import regAndAuth from './router/api/regAndAuth';
 
 require('dotenv').config();
 
@@ -43,6 +44,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/auth', regAndAuth);
 app.use(authCheck);
 
 app.listen(PORT, () => {
