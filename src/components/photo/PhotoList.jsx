@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function PhotoList({ oneAlbumPhoto }) {
-  console.log(oneAlbumPhoto);
+//   const [allPhotos, setAllPhotos] = useState(oneAlbumPhoto || null);
+//   useEffect('//home/album/:albumId')
   return (
     <>
 
-      <h2>fksnfks</h2>
+      <h2>Photo</h2>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           {oneAlbumPhoto?.map((el) => (
