@@ -5,7 +5,7 @@ export default function PhotoList({ oneAlbumPhoto }) {
   return (
     <>
 
-      <h2>fksnfks</h2>
+      <h2>Photo</h2>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           {oneAlbumPhoto?.map((el) => (

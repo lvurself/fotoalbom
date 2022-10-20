@@ -42,7 +42,7 @@ export default function Navbar({ setCurrentUser, currentUser }) {
                 <a className="nav-link active" aria-current="page" href="#">MyAlbums</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Create album</a>
+                <Link className="nav-link active" aria-current="page" to="/home/newalbum">Create album</Link>
               </li>
               <li className="nav-item">
                 <a onClick={logoutHandler} className="nav-link" href="/logout">Выход</a>
