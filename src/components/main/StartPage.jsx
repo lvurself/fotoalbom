@@ -4,43 +4,47 @@ import { Link } from 'react-router-dom';
 export default function StartPage() {
   return (
     <div className="container">
-      <div className="headImg" style={{ width: '100%', height: '400px', position: 'relative' }}>
-        <div
-          className="centered"
-          style={{
-            color: 'white', backgroundColor: '#8d776a', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-          }}
-        >
-          <h1 style={{ marginBottom: '0' }}>
+      <div className="headImg">
+        <div className="centered">
+          <h1 className="onPhoto">
             ELBRUS/
             <br />
             ALBUM
           </h1>
         </div>
-        <img src="./images/startpageHead.jpg" alt="start_image" style={{ width: '100%', height: '100%' }} />
+        <img className="headPhoto" src="./images/startpageHead.jpg" alt="start_image" />
       </div>
       <div className="about">
-        <h2 style={{ textAlign: 'center' }}>Добро пожаловать!</h2>
-        <div>
-          <p>ELBRUS/ALBUMS - веб приложение, позволяющее полльзователю:</p>
+        <h2 className="aboutTitle">
+          Добро пожаловать!
+        </h2>
+        <div className="container">
+          <p className="unTitle">ELBRUS/ALBUMS - веб приложение, позволяющее пользователю:</p>
           <ul>
-            <li>создавать и редактировать фотоальбомы;</li>
-            <li>просматривать публичные фотоальбомы;</li>
-            <li>настраивать приватность Ваших фотоальбомов;</li>
+            <li className="startListing">создавать и редактировать фотоальбомы;</li>
+            <li className="startListing">просматривать публичные фотоальбомы;</li>
+            <li className="startListing">настраивать приватность Ваших фотоальбомов;</li>
+          </ul>
+        </div>
+        <div className="container">
+          <p className="unTitle">Наши преимущества:</p>
+          <ul>
+            <li className="startListing">бесплатное использование</li>
+            <li className="startListing">удобный интерфейс;</li>
+            <li className="startListing">надежность;</li>
+            <li className="startListing">кросплатформенность(в разработке);</li>
           </ul>
         </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <h4>
-            <Link to="/auth">Войдите</Link>
-            {' '}
-            или
-            {' '}
-            <Link to="/reg">Зарегистрируйтесь</Link>
-            {' '}
-            для начала работы с ELBRUS/ALBUMS.
-          </h4>
-        </div>
+        <h4 className="allertSticker">
+          <Link className="authLink" to="/auth">Войдите</Link>
+          {' '}
+          или
+          {' '}
+          <Link className="authLink" to="/reg">Зарегистрируйтесь</Link>
+          {' '}
+          для начала работы с ELBRUS/ALBUMS.
+        </h4>
       </div>
     </div>
   );
