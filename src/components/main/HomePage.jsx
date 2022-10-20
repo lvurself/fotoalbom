@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import OneAlbum from '../album/OneAlbum';
 
 export default function HomePage({ allAlbums }) {
-  console.log(allAlbums);
+  const [allCards, setAllCards] = useState(allAlbums || null);
+  //   const { albumsId } = useParams();
+  useEffect(() => {
+    fetch('/api/home')
+      .then((res) => res.json())
+      .then((data) => setAllCards(data));
+  }, []);
   return (
-    <div>
+    <div className="container">
       <h1>Albums</h1>
-      {allAlbums?.map((el) => <OneAlbum album={el} key={el.id} />)}
+      <div style={{
+        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly',
+      }}
+      >
+        {allCards?.map((el) => <OneAlbum album={el} key={el.id} />)}
+      </div>
     </div>
   );
 }

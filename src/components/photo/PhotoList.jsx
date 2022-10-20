@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function PhotoList({ oneAlbumPhoto }) {
-  console.log(oneAlbumPhoto);
+//   const [allPhotos, setAllPhotos] = useState(oneAlbumPhoto || null);
+//   useEffect('//home/album/:albumId')
   return (
     <>
 

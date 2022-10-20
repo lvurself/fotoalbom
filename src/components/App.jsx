@@ -9,7 +9,7 @@ import PhotoList from './photo/PhotoList';
 import NewAlbum from './album/NewAlbum';
 
 export default function App({
-  user, albums, photoss, oneAlbumPhoto,
+  user, albums, photos, oneAlbumPhoto,
 }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
@@ -19,7 +19,7 @@ export default function App({
         <Route path="/" element={<StartPage />} />
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
         <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
-        <Route path="/home" element={<HomePage allAlbums={albums} />} />
+        <Route path="/home" element={<HomePage allAlbums={albums} allPhotos={photos} />} />
         <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} />} />
         <Route path="/home/newalbum" element={<NewAlbum />} />
       </Routes>
