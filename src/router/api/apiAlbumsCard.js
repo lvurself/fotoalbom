@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/home', async (req, res) => {
 //   const { albumsId } = req.params;
-  const albums = await Album.findAll({ where: { private: true } });
+  const albums = await Album.findAll({ where: { private: false } });
   // const initState = { albums, photos };
   res.json(albums);
 });
@@ -25,3 +25,6 @@ router.get('/home/album/:albumId', async (req, res) => {
   res.json(oneAlbumPhoto);
 });
 export default router;
+
+// where: { private: false }
+// const albums = await Album.findAll({ where: { private: false } });

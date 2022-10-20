@@ -41,7 +41,7 @@ export default function Navbar({ setCurrentUser, currentUser }) {
               <li className="nav-item">
 
                 <Link className="nav-link active" aria-current="page" to="/home/myalbums">MyAlbums</Link>
-                <Link className="nav-link active" aria-current="page" to={`/home/albums/${currentUser.id}`}>MyAlbums</Link>
+                {/* <Link className="nav-link active" aria-current="page" to={`/home/albums/${currentUser.id}`}>MyAlbums</Link> */}
 
               </li>
               <li className="nav-item">
