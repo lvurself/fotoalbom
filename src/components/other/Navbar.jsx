@@ -11,6 +11,7 @@ export default function Navbar({ setCurrentUser, currentUser }) {
       navigate('/');
     }
   };
+  console.log('currentuser', currentUser);
   return (
     <nav className="navbar navbar-expand-lg navbar-light navbar-castom">
       <div className="container-fluid">
@@ -31,12 +32,13 @@ export default function Navbar({ setCurrentUser, currentUser }) {
             {currentUser && (
             <>
               <Link className="myColor" aria-current="page" to="/home">Home</Link>
-              <a className="myColor" aria-current="page" href="#">MyAlbums</a>
-              <a className="myColor" aria-current="page" href="#">Create album</a>
+              {/* <a className="myColor" aria-current="page" href="#">MyAlbums</a> */}
+              <Link className="myColor" aria-current="page" to="/home/myalbums">MyAlbums</Link>
+              <Link className="myColor" aria-current="page" to="/home/newalbum">Create album</Link>
               <a onClick={logoutHandler} className="myColor" aria-current="page" href="/">Выйти</a>
-              {/* <li className="nav-item">
-              {currentUser.name}
-            </li> */}
+              <li className="myColor">
+                {currentUser.name}
+              </li>
             </>
             )}
           </ul>
