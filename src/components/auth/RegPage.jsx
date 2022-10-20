@@ -16,7 +16,7 @@ export default function RegPage({ setCurrentUser }) {
     if (response.ok) {
       const data = await response.json();
       setCurrentUser(data);
-      navigate('/');
+      navigate('/home');
     }
   };
 
@@ -28,20 +28,20 @@ export default function RegPage({ setCurrentUser }) {
             <h1 className="user__title">Регистрация</h1>
           </header>
 
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="form__group">
-              <input type="text" placeholder="Username" className="form__input" />
+              <input name="name" type="text" placeholder="Username" className="form__input" />
             </div>
 
             <div className="form__group">
-              <input type="email" placeholder="Email" className="form__input" />
+              <input name="email" type="email" placeholder="Email" className="form__input" />
             </div>
 
             <div className="form__group">
-              <input type="password" placeholder="Password" className="form__input" />
+              <input name="password" type="password" placeholder="Password" className="form__input" />
             </div>
 
-            <button className="buton" type="button">Register</button>
+            <button className="buton" type="submit">Register</button>
           </form>
         </div>
       </div>

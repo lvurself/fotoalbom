@@ -13,11 +13,11 @@ import MyAlbums from './album/MyAlbums';
 export default function App({
   user, albums, photos, oneAlbumPhoto,
 }) {
-  const [currentuser, setCurrentUser] = useState(user || null);
+  const [currentUser, setCurrentUser] = useState(user || null);
   return (
     <>
       <ScrollToTop />
-      <Navbar currentuser={currentuser} setCurrentUser={setCurrentUser} />
+      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />

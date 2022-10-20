@@ -17,7 +17,8 @@ export default function AuthPage({ setCurrentUser }) {
     const data = await response.json();
     if (response.ok) {
       setCurrentUser(data);
-      navigate('/');
+      console.log('success');
+      navigate('/home');
     } else {
       console.log(data.message);
       setError(data.message);
@@ -30,18 +31,18 @@ export default function AuthPage({ setCurrentUser }) {
           <header className="user__header">
             <h1 className="user__title">Авторизация</h1>
           </header>
-
-          <form className="form">
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <form className="form" onSubmit={handleSubmit}>
 
             <div className="form__group">
-              <input type="email" placeholder="Email" className="form__input" />
+              <input name="email" type="email" placeholder="Email" className="form__input" />
             </div>
 
             <div className="form__group">
-              <input type="password" placeholder="Password" className="form__input" />
+              <input name="password" type="password" placeholder="Password" className="form__input" />
             </div>
 
-            <button className="buton" type="button">Register</button>
+            <button className="buton" type="submit">Register</button>
           </form>
         </div>
       </div>
