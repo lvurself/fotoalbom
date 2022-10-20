@@ -26,24 +26,24 @@ export default function AuthPAge({ setCurrentUser }) {
   return (
     <div className="bodyForm">
       <div className="underForm">
-      <div className="user">
-        <header className="user__header">
-          <h1 className="user__title">Авторизация</h1>
-        </header>
+        <div className="user">
+          <header className="user__header">
+            <h1 className="user__title">Авторизация</h1>
+          </header>
 
-        <form className="form">
+          <form className="form">
 
-          <div className="form__group">
-            <input type="email" placeholder="Email" className="form__input" />
-          </div>
+            <div className="form__group">
+              <input type="email" placeholder="Email" className="form__input" />
+            </div>
 
-          <div className="form__group">
-            <input type="password" placeholder="Password" className="form__input" />
-          </div>
+            <div className="form__group">
+              <input type="password" placeholder="Password" className="form__input" />
+            </div>
 
-          <button className="buton" type="button">Register</button>
-        </form>
-      </div>
+            <button className="buton" type="button">Register</button>
+          </form>
+        </div>
       </div>
     </div>
   );

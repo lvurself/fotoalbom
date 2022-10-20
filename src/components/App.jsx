@@ -19,6 +19,19 @@ export default function App({ user }) {
         <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
+      <footer className="footer">
+        <div className="vertical">
+          Created an decorated by:
+          {' '}
+          <a className="footerLinks" href="https://github.com/lvurself">@lvurself</a>
+          {' '}
+          <a className="footerLinks" href="https://github.com/DaniilBalashov">@DaniilBalashov</a>
+          {' '}
+          ,
+          <a className="footerLinks" href="https://github.com/SoFunnyHah">@SoFunnyHah</a>
+          .
+        </div>
+      </footer>
     </>
   );
 }

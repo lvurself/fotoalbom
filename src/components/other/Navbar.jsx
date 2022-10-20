@@ -23,8 +23,8 @@ export default function Navbar({ setCurrentUser, currentUser }) {
             {!currentUser && (
             <>
               <NavLink className="myColor" aria-current="page" to="/">Начальная страница</NavLink>
-              <NavLink className="myColor" aria-current="page" to="/reg">Зарегистрироваться</NavLink>
-              <NavLink className="myColor" aria-current="page" to="/auth">Авторизоваться</NavLink>
+              <NavLink className="myColor" aria-current="page" to="/reg">Регистрация</NavLink>
+              <NavLink className="myColor" aria-current="page" to="/auth">Авторизация</NavLink>
             </>
             )}
             {currentUser && (

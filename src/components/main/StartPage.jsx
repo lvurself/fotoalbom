@@ -19,15 +19,15 @@ export default function StartPage() {
           <h2 className="aboutTitle">
             Добро пожаловать!
           </h2>
-          <div className="container">
-            <p className="unTitle">ELBRUS/ALBUMS - веб приложение, позволяющее пользователю:</p>
+          <div className="container-castom">
+            <p className="unTitle">Elbrus Albums - веб приложение, позволяющее пользователю:</p>
             <ul>
               <li className="startListing">создавать и редактировать фотоальбомы;</li>
               <li className="startListing">просматривать публичные фотоальбомы;</li>
               <li className="startListing">настраивать приватность Ваших фотоальбомов;</li>
             </ul>
           </div>
-          <div className="container">
+          <div className="container-castom">
             <p className="unTitle">Наши преимущества:</p>
             <ul>
               <li className="startListing">бесплатное использование</li>
@@ -36,7 +36,7 @@ export default function StartPage() {
               <li className="startListing">кросплатформенность(в разработке);</li>
             </ul>
           </div>
-          <div className="container">
+          <div className="container-castom">
             <p className="unTitle">Начало работы</p>
             <p className="startListing">
               Чтобы начать создавать потрясающие фотоальбомы,
@@ -51,6 +51,22 @@ export default function StartPage() {
             </p>
           </div>
 
+          <div className="container-castom">
+            <p className="unTitle">
+              Создание альбомов и работа с ними
+            </p>
+            <p className="startListing">
+              Вы можете настраивать и организовывать свои фотоальбомы по собственному
+              усмотрению. С помощью Elbrus Albums вы можете выбрать изображение
+              обложки альбома, его описание и название. Также пользователь может настроить
+              приватность своего фотоальбома
+              (приватные альбомы
+              {' '}
+              <b>не отображаются</b>
+              {' '}
+              в списке публичных альбомов).
+            </p>
+          </div>
           {/* <h4 className="allertSticker">
           <Link className="authLink" to="/auth">Войдите</Link>
           {' '}

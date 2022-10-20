@@ -5,6 +5,7 @@
 }
 body{
     background-image: url('./images/background.jpg');
+    background-size: 100% 100%;
 }
 /* StartPage */
 .headImg {
@@ -89,7 +90,7 @@ body{
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
     /* background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%); */
-    height: 100vh
+    height: 90vh
 }
 
 .user {
@@ -106,8 +107,8 @@ body{
 }
 
 .underForm {
-    width: 25%;
     margin: auto;
+    width: 25%;
     background-color: #8d776a;
     border-radius: 6px;
     padding: 20px;
@@ -222,6 +223,10 @@ body{
     font-size: 35px;
 }
 
+.castomLogo:hover {
+    color: white;
+}
+
 .navbar-castom {
     background-color: #8d776a;
 }
@@ -242,3 +247,34 @@ body{
 }
 
 
+/* footer */
+.footerLinks {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+.footerLinks:hover {
+    color: black;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #8d776a;
+    height: 2em;
+vertical-align: auto;
+}
+
+.vertical {
+padding-top: 7px;
+}
+
+.container-castom {
+    max-width: 85%;
+    margin: auto;
+}
