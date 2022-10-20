@@ -13,7 +13,7 @@ export default function Navbar({ setCurrentUser, currentUser }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <img src="./images/logo.png" alt="logo" style={{ width: '8%', height: '8%' }} />
+        {/* <img src="./images/logo.png" alt="logo" style={{ width: '8%', height: '8%' }} /> */}
         <Link className="navbar-brand" href="/">ElbrusAlbum</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
