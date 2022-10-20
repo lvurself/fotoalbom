@@ -16,21 +16,7 @@ router.post('/reg', async (req, res) => {
   }
 });
 
-
 router.post('/auth', async (req, res) => {
-//   const { email, password } = req.body;
-//   if (!email || !password) return res.status(400).json({ message: 'email or password not valid' });
-//   try {
-//     const userFromDb = await User.findOne({ where: email });
-//     if (!userFromDb) return res.status(400).json({ message: 'email not found' });
-//     const isValid = await compare(password, userFromDb.password);
-
-  //     if (!isValid) return res.status(400).json({ message: 'email or password is invalid' });
-
-  //     req.session.user = { id: userFromDb.id, name: userFromDb.name, email: userFromDb.email };
-  //     res.json({ id: userFromDb.id, name: userFromDb.name, email: userFromDb.email });
-  //   } catch (err) { console.error(err); }
-
   const { email, password } = req.body;
   if (email && password) {
     const user = await User.findOne({ where: { email } });
@@ -49,6 +35,5 @@ router.get('/logout', async (req, res) => {
   req.session.destroy();
   res.sendStatus(200);
 });
-
 
 export default router;
