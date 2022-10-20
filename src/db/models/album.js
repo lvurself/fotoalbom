@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   Album.init({
     name: DataTypes.STRING,
     private: DataTypes.BOOLEAN,
+    description: DataTypes.STRING,
     userid: DataTypes.STRING,
   }, {
     sequelize,

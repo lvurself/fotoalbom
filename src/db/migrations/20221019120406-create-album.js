@@ -14,6 +14,9 @@ module.exports = {
       private: {
         type: Sequelize.BOOLEAN,
       },
+      description: {
+        type: Sequelize.STRING,
+      },
       userid: {
         type: Sequelize.STRING,
       },

@@ -5,10 +5,11 @@ export default function Navbar({ setCurrentUser, currentUser }) {
   const navigate = useNavigate();
   const logoutHandler = async (e) => {
     e.preventDefault();
-    (await fetch('/auth/logout')).then((res) => {
-      if (res.ok) { setCurrentUser(null); }
+    const response = await fetch('/auth/logout');
+    if (response.ok) {
+      setCurrentUser(null);
       navigate('/');
-    });
+    }
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light navbar-castom">

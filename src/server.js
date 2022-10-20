@@ -7,6 +7,9 @@ import path from 'path';
 import customRender from './utils/customRender';
 import authCheck from './middlewares/authCheck';
 import indexRouter from './router/render/renderRouter';
+import apiAlbumsCard from './router/api/apiAlbumsCard';
+import uploadImage from './router/api/apiUpload';
+
 import regAndAuth from './router/api/regAndAuth';
 
 require('dotenv').config();
@@ -25,7 +28,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const sessionConfig = {
-  name: 'sid',
+  name: 'user_sid',
   store: new FileStore(),
   secret: 'vndsjn',
   resave: false,
@@ -44,7 +47,13 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+
+app.use('/api', apiAlbumsCard);
+
 app.use('/auth', regAndAuth);
+
+app.use('/image', uploadImage);
+
 app.use(authCheck);
 
 app.listen(PORT, () => {

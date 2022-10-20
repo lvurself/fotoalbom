@@ -5,7 +5,7 @@ export default function RegPage({ setCurrentUser }) {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/reg', {
+    const response = await fetch('/auth/reg', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

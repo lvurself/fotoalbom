@@ -1,5 +1,5 @@
 import express from 'express';
-import Album from '../../db/models';
+import { Album, Photo } from '../../db/models';
 
 const router = express.Router();
 
@@ -13,13 +13,26 @@ router.get('/auth', (req, res) => {
   res.render('Layout');
 });
 
-router.get('/home', (req, res) => {
+router.get('/home', async (req, res) => {
+  const albums = await Album.findAll();
+  const initState = { albums };
+  res.render('Layout', initState);
+});
+router.get('/home/album/:albumId', async (req, res) => {
+  const { albumId } = req.params;
+  const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
+  const initState = { oneAlbumPhoto };
+  res.render('Layout', initState);
+});
+
+router.get('/home/newalbum', (req, res) => {
   res.render('Layout');
 });
 
-router.get('/albumList', async (req, res) => {
-  const albums = await Album.findAll();
-  const initState = { albums };
+router.get('/home/myalbums', async (req, res) => {
+  const { userId } = req.params;
+  const myAllAlbums = await Album.findAll({ where: { userid: userId } });
+  const initState = { myAllAlbums };
   res.render('Layout', initState);
 });
 
