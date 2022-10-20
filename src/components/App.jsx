@@ -5,11 +5,13 @@ import StartPage from './main/StartPage';
 import RegPage from './auth/RegPage';
 import AuthPage from './auth/AuthPAge';
 import HomePage from './main/HomePage';
+import ScrollToTop from './ScrollToTop';
 
 export default function App({ user }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
+      <ScrollToTop />
       <Navbar currentuser={currentuser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<StartPage />} />

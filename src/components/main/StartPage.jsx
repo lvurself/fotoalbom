@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function StartPage() {
   return (
@@ -35,6 +35,20 @@ export default function StartPage() {
               <li className="startListing">надежность;</li>
               <li className="startListing">кросплатформенность(в разработке);</li>
             </ul>
+          </div>
+          <div className="container">
+            <p className="unTitle">Начало работы</p>
+            <p className="startListing">
+              Чтобы начать создавать потрясающие фотоальбомы,
+              вам нужно выполнить
+              {' '}
+              <Link to="/auth" style={{ textDecoration: 'none' }}>авторизацию</Link>
+              {' '}
+              либо
+              {' '}
+              <Link to="/reg" style={{ textDecoration: 'none' }}>регистрацию</Link>
+              .
+            </p>
           </div>
 
           {/* <h4 className="allertSticker">
