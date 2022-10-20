@@ -4,7 +4,8 @@ export default function NewAlbum() {
   const [fileData, setFileData] = useState();
 
   const fileChangeHandler = (e) => {
-    setFileData(e.target.files[0]);
+    console.log(e.target.files);
+    setFileData(e.target.files);
   };
 
   const submitHandler = (e) => {
@@ -34,7 +35,7 @@ export default function NewAlbum() {
           </div>
         </div>
         <div className="input-group">
-          <input onChange={fileChangeHandler} type="file" className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
+          <input name="images" onChange={fileChangeHandler} type="file" multiple className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
         </div>
         <div className="button-group mb-3">
           <button type="submit" className="btn btn-outline-secondary">Add Album</button>
