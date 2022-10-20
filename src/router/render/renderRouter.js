@@ -29,4 +29,11 @@ router.get('/home/newalbum', (req, res) => {
   res.render('Layout');
 });
 
+router.get('/home/myalbums', async (req, res) => {
+  const { userId } = req.params;
+  const myAllAlbums = await Album.findAll({ where: { userid: userId } });
+  const initState = { myAllAlbums };
+  res.render('Layout', initState);
+});
+
 export default router;

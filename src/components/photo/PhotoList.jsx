@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function PhotoList({ oneAlbumPhoto }) {
-//   const [allPhotos, setAllPhotos] = useState(oneAlbumPhoto || null);
-//   useEffect('//home/album/:albumId')
+  const { albumId } = useParams();
+  const [photos, setPhotos] = useState(oneAlbumPhoto || []);
+  useEffect(() => {
+    fetch(`/api/home/album/${albumId}`)
+      .then((res) => res.json())
+      .then((data) => setPhotos(data));
+  }, []);
+  //   useEffect(() => {
+  //     fetch('/home/album/:albumId')
+  //     .then((res) => )
+  //   });
   return (
-    <>
+    <div className="container">
 
       <h2>Photo</h2>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-          {oneAlbumPhoto?.map((el) => (
-            <div className="carousel-item active">
-              <img src={el.name} className="d-block w-100" alt="..." />
-            </div>
+          {photos?.map((el, i) => (
+            (i === 0) ? (
+              <div className="carousel-item active" key={el.id}>
+                <img src={el.name} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+              </div>
+            ) : (
+              <div className="carousel-item" key={el.id}>
+                <img src={el.name} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+              </div>
+            )
           ))}
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -32,6 +48,6 @@ export default function PhotoList({ oneAlbumPhoto }) {
         {oneAlbumPhoto?.map((el) => <OnePhoto onePhoto={el} key={el.id} />)}
         // */}
       {/* </div> */}
-    </>
+    </div>
   );
 }
