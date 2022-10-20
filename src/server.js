@@ -4,14 +4,14 @@ import morgan from 'morgan';
 import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
+import multer from 'multer';
 import customRender from './utils/customRender';
 import authCheck from './middlewares/authCheck';
 import indexRouter from './router/render/renderRouter';
-
 import apiAlbumsCard from './router/api/apiAlbumsCard';
+import uploadImage from './router/api/apiUpload';
 
 import regAndAuth from './router/api/regAndAuth';
-
 
 require('dotenv').config();
 
@@ -52,6 +52,8 @@ app.use('/', indexRouter);
 app.use('/api', apiAlbumsCard);
 
 app.use('/auth', regAndAuth);
+
+app.use('/image', uploadImage);
 
 app.use(authCheck);
 
