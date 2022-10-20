@@ -21,29 +21,30 @@ export default function RegPage({ setCurrentUser }) {
   };
 
   return (
-    <div>
-      <h1>Reg</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Name
-            <input name="name" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          </label>
+    <div className="bodyForm">
+      <div className="underForm">
+        <div className="user">
+          <header className="user__header">
+            <h1 className="user__title">Регистрация</h1>
+          </header>
+
+          <form className="form">
+            <div className="form__group">
+              <input type="text" placeholder="Username" className="form__input" />
+            </div>
+
+            <div className="form__group">
+              <input type="email" placeholder="Email" className="form__input" />
+            </div>
+
+            <div className="form__group">
+              <input type="password" placeholder="Password" className="form__input" />
+            </div>
+
+            <button className="buton" type="button">Register</button>
+          </form>
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
-            <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          </label>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
-            <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+      </div>
     </div>
   );
 }

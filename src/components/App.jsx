@@ -5,6 +5,7 @@ import StartPage from './main/StartPage';
 import RegPage from './auth/RegPage';
 import AuthPage from './auth/AuthPage';
 import HomePage from './main/HomePage';
+import ScrollToTop from './ScrollToTop';
 import PhotoList from './photo/PhotoList';
 import NewAlbum from './album/NewAlbum';
 import MyAlbums from './album/MyAlbums';
@@ -15,7 +16,8 @@ export default function App({
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
     <>
-      <Navbar currentUser={currentuser} setCurrentUser={setCurrentUser} />
+      <ScrollToTop />
+      <Navbar currentuser={currentuser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
@@ -25,6 +27,19 @@ export default function App({
         <Route path="/home/newalbum" element={<NewAlbum />} />
         <Route path="/home/myalbums" element={<MyAlbums allAlbums={albums} />} />
       </Routes>
+      <footer className="footer">
+        <div className="vertical">
+          Created an decorated by:
+          {' '}
+          <a className="footerLinks" href="https://github.com/lvurself">@lvurself</a>
+          {' '}
+          <a className="footerLinks" href="https://github.com/DaniilBalashov">@DaniilBalashov</a>
+          {' '}
+          ,
+          <a className="footerLinks" href="https://github.com/SoFunnyHah">@SoFunnyHah</a>
+          .
+        </div>
+      </footer>
     </>
   );
 }
