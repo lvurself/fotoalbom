@@ -4,7 +4,6 @@ import morgan from 'morgan';
 import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
-import multer from 'multer';
 import customRender from './utils/customRender';
 import authCheck from './middlewares/authCheck';
 import indexRouter from './router/render/renderRouter';
