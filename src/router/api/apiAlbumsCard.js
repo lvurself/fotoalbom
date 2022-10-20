@@ -34,3 +34,6 @@ router.route('/takephoto/:link')
   });
 
 export default router;
+
+// where: { private: false }
+// const albums = await Album.findAll({ where: { private: false } });

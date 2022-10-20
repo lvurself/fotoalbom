@@ -4,6 +4,7 @@ import OneAlbum from '../album/OneAlbum';
 
 export default function HomePage({ allAlbums }) {
   const [allCards, setAllCards] = useState(allAlbums || null);
+  console.log(allCards, 'allcards');
   //   const { albumsId } = useParams();
   useEffect(() => {
     fetch('/api/home')
