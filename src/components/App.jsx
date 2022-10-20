@@ -7,6 +7,7 @@ import AuthPage from './auth/AuthPage';
 import HomePage from './main/HomePage';
 import PhotoList from './photo/PhotoList';
 import NewAlbum from './album/NewAlbum';
+import MyAlbums from './album/MyAlbums';
 
 export default function App({
   user, albums, photos, oneAlbumPhoto,
@@ -20,8 +21,9 @@ export default function App({
         <Route path="/reg" element={<RegPage setCurrentUser={setCurrentUser} />} />
         <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
         <Route path="/home" element={<HomePage allAlbums={albums} allPhotos={photos} />} />
-        <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} />} />
+        <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
         <Route path="/home/newalbum" element={<NewAlbum />} />
+        <Route path="/home/myalbums" element={<MyAlbums allAlbums={albums} />} />
       </Routes>
     </>
   );
