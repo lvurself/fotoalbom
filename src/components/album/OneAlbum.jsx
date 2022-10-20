@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 export default function OneAlbum({ album, allPhotos }) {
-//   console.log('qwertyu:', album);
+  console.log('=======>', album);
+  //   console.log('qwertyu:', album);
   // const [photos, setPhotos] = useState(null);
   // useEffect(() => {
   //   fetch('/api/home/photos')

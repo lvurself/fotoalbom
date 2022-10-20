@@ -7,7 +7,10 @@ export default function PhotoList({ oneAlbumPhoto }) {
   useEffect(() => {
     fetch(`/api/home/album/${albumId}`)
       .then((res) => res.json())
-      .then((data) => setPhotos(data));
+      .then((data) => {
+        console.log(data);
+        setPhotos(data);
+      });
   }, []);
   //   useEffect(() => {
   //     fetch('/home/album/:albumId')
@@ -22,11 +25,11 @@ export default function PhotoList({ oneAlbumPhoto }) {
           {photos?.map((el, i) => (
             (i === 0) ? (
               <div className="carousel-item active" key={el.id}>
-                <img src={el.name} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
               </div>
             ) : (
               <div className="carousel-item" key={el.id}>
-                <img src={el.name} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
               </div>
             )
           ))}
