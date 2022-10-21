@@ -31,7 +31,7 @@ export default function MyAlbums({ setMyAllCards, myAllCards }) {
                   </div>
                   <ul className="sci" style={{ textAlign: 'center' }}>
                     <li style={{ textAlign: 'center' }}>
-                      <Link className="noLined" to={`/home/album/${el?.id}`}>View</Link>
+                      <Link className="noLined" to={`/home/myalbums/${el?.id}`}>View</Link>
                     </li>
                   </ul>
                 </div>
