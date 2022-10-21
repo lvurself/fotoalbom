@@ -43,14 +43,6 @@ export default function PhotoList({ oneAlbumPhoto }) {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      {/* //
-      {' '}
-      <div>
-        //
-        {' '}
-        {oneAlbumPhoto?.map((el) => <OnePhoto onePhoto={el} key={el.id} />)}
-        // */}
-      {/* </div> */}
     </div>
   );
 }
