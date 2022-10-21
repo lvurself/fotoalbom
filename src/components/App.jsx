@@ -25,7 +25,9 @@ export default function App({
         <Route path="/home" element={<HomePage allAlbums={albums} allPhotos={photos} />} />
         <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
         <Route path="/home/newalbum" element={<NewAlbum />} />
-        <Route path="/home/myalbums" element={<MyAlbums allAlbums={albums} />} />
+        <Route path="/home/myalbums/" element={<MyAlbums allAlbums={albums} />} />
+        <Route path="/home/myalbums:albumId/" element={<MyAlbums allAlbums={albums} />} />
+
       </Routes>
       <footer className="footer">
         <div className="vertical">

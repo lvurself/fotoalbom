@@ -7,8 +7,7 @@ const router = express.Router();
 
 router.get('/home', async (req, res) => {
 //   const { albumsId } = req.params;
-  const albums = await Album.findAll();
-  // const initState = { albums, photos };
+  const albums = await Album.findAll({ where: { private: false } });
   res.json(albums);
 });
 router.get('/home/photos', async (req, res) => {
@@ -16,6 +15,11 @@ router.get('/home/photos', async (req, res) => {
   res.json(photos);
 });
 // where: { albumid: albumsId } }
+router.get('/home/myalbums/', async (req, res) => {
+  const { userId } = req.params;
+  const myalbums = await Album.findAll({ where: { userid: userId } });
+  res.json(myalbums);
+});
 
 router.get('/home/album/:albumId', async (req, res) => {
   const { albumId } = req.params;
@@ -23,8 +27,6 @@ router.get('/home/album/:albumId', async (req, res) => {
   console.log(oneAlbumPhoto, 'hfhfhhfhfhfhfhf');
   //   console.log('hfsahjfgahjgfjhasgfhasjfgasjf', oneAlbumPhoto);
   //   console.log('=========>', req.session);
-
-  res.json(oneAlbumPhoto);
 });
 
 router.route('/takephoto/:link')
