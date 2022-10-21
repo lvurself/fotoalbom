@@ -7,9 +7,14 @@ export default function MyPhotoList({ myAllAlbums, oneAlbumPhoto }) {
   const [photos, setPhotos] = useState(oneAlbumPhoto || []);
   const [thisAlbum, setThisAlbum] = useState(myAllAlbums || []);
   const [inputs, setInputs] = useState({});
+  const [clickView, setClickView] = useState(false);
 
   const changeHandler = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const clickHandler = () => {
+    setClickView(true);
   };
 
   useEffect(() => {
@@ -54,59 +59,65 @@ export default function MyPhotoList({ myAllAlbums, oneAlbumPhoto }) {
       {' '}
       <h2>{thisAlbum.description}</h2>
 
-      <div className="form-check">
-        <label className="form-check-label" htmlFor="flexRadioDefault1">
-          <input
-            onChange={changeHandler}
-            value="true"
-            name="private"
-            className="form-check-input"
-            type="radio"
-            id="flexRadioDefault1"
-          />
-          Private
-        </label>
-      </div>
-      <div className="form-check">
-        <label className="form-check-label" htmlFor="flexRadioDefault2">
-          <input
-            onChange={changeHandler}
-            value="false"
-            name="private"
-            className="form-check-input"
-            type="radio"
-            id="flexRadioDefault2"
-            checked
-          />
-          Public
-        </label>
-      </div>
-      <div className="input-group mb-3">
-        <input
-          onChange={changeHandler}
-          value={inputs.name || ''}
-          type="text"
-          name="name"
-          className="form-control"
-          placeholder="Название"
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-        />
-      </div>
-      <div className="input-group mb-3">
-        <input
-          onChange={changeHandler}
-          value={inputs.description || ''}
-          type="text"
-          name="description"
-          className="form-control"
-          placeholder="Описание"
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-        />
-      </div>
-      <button onClick={deleteHandler} type="submit" className="btn btn-outline-danger">Удалить альбом</button>
-      <button onClick={editHandler} type="submit" className="btn btn-outline-warning">Изменить</button>
+      { clickView ? (
+        <>
+          <div className="form-check">
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+              <input
+                onChange={changeHandler}
+                value="true"
+                name="private"
+                className="form-check-input"
+                type="radio"
+                id="flexRadioDefault1"
+              />
+              Private
+            </label>
+          </div>
+          <div className="form-check">
+            <label className="form-check-label" htmlFor="flexRadioDefault2">
+              <input
+                onChange={changeHandler}
+                value="false"
+                name="private"
+                className="form-check-input"
+                type="radio"
+                id="flexRadioDefault2"
+                checked
+              />
+              Public
+            </label>
+          </div>
+          <div className="input-group mb-3">
+            <input
+              onChange={changeHandler}
+              value={inputs.name || ''}
+              type="text"
+              name="name"
+              className="form-control"
+              placeholder="Название"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+          </div>
+          <div className="input-group mb-3">
+            <input
+              onChange={changeHandler}
+              value={inputs.description || ''}
+              type="text"
+              name="description"
+              className="form-control"
+              placeholder="Описание"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+          </div>
+          <button onClick={deleteHandler} type="submit" className="btn btn-outline-danger">Удалить альбом</button>
+          <button onClick={editHandler} type="submit" className="btn btn-outline-warning">Изменить</button>
+        </>
+      )
+        : (<button onClick={clickHandler} type="submit" className="btn btn-outline-info">Info</button>
+        )}
 
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
