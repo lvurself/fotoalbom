@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function MyAlbums({ myAllAlbums }) {
-  // console.log('myAllAlbums', myAllAlbums);
+  console.log('myAllAlbums', myAllAlbums);
+  const [myAllCards, setMyAllCards] = useState(myAllAlbums || null);
+
+  useEffect(() => {
+    fetch('/api/home/myalbums')
+      .then((res) => res.json())
+      .then((data) => setMyAllCards(data));
+  }, []);
   return (
     <div className="container">
 
       <h1>My Albums111</h1>
-      {myAllAlbums?.map((el) => (
+      {myAllCards?.map((el) => (
         <div key={el.id}>
           <div className="card" style={{ width: '18rem' }}>
             <img src="https://www.interfax.ru/ftproot/photos/photostory/2022/04/29/week/week7_1100.jpg" className="card-img-top" alt="..." />
