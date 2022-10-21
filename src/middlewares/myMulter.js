@@ -5,7 +5,7 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, './storage/images');
   },
   filename: (req, file, cb) => {
-    console.log(file.mimetype);
+    // console.log(file.mimetype);
     cb(null, `${Date.now()}--${file.originalname}`);
   },
 });

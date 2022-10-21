@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 export default function PhotoList({ oneAlbumPhoto }) {
   const { albumId } = useParams();
+  console.log('_____!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', albumId);
   const [photos, setPhotos] = useState(oneAlbumPhoto || []);
   useEffect(() => {
     fetch(`/api/home/album/${albumId}`)

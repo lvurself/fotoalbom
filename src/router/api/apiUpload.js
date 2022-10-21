@@ -7,8 +7,8 @@ const router = express.Router();
 const upload = multer({ storage: fileStorageEngine });
 
 router.post('/photo', upload.array('images', 10), async (req, res) => {
-  console.log('reqfiles', (req.files));
-  console.log('reqbody', req.body.title);
+  // console.log('reqfiles', (req.files));
+  // console.log('reqbody', req.body.title);
   const alb = await Album.create({
     name: req.body.title,
     description: req.body.description,
@@ -16,7 +16,7 @@ router.post('/photo', upload.array('images', 10), async (req, res) => {
   });
 
   (req.files).forEach((element) => {
-    console.log(element, 'ghjklkjhgfghj');
+    // console.log(element, 'ghjklkjhgfghj');
     Photo.create({
       name: element.filename,
       albumid: alb.id,
