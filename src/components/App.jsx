@@ -10,7 +10,7 @@ import NewAlbum from './album/NewAlbum';
 import MyAlbums from './album/MyAlbums';
 
 export default function App({
-  user, albums, photos, oneAlbumPhoto,
+  user, albums, photos, oneAlbumPhoto, myAllAlbums
 }) {
   const [currentuser, setCurrentUser] = useState(user || null);
   return (
