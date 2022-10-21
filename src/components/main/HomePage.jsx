@@ -12,14 +12,16 @@ export default function HomePage({ allAlbums }) {
       .then((data) => setAllCards(data));
   }, []);
   return (
-    <div className="container">
-      <h1>Albums</h1>
-      <div style={{
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly',
-      }}
-      >
-        {allCards?.map((el) => <OneAlbum album={el} key={el.id} />)}
+    <>
+      <h1 className="aboutTitle">Albums</h1>
+      <div className="container">
+        <div style={{
+          marginBottom: '100px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly',
+        }}
+        >
+          {allCards?.map((el) => <OneAlbum album={el} key={el.id} />)}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
