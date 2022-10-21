@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('./images/background.jpg');
+    background-image: url('/images/background.jpg');
     background-size: 100% 100%;
 }
 /* StartPage */
