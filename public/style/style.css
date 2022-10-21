@@ -278,3 +278,166 @@ padding-top: 7px;
     max-width: 85%;
     margin: auto;
 }
+
+/* CARDS ALBUMS */
+
+section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: circle(30% at right 70%);
+}
+
+section::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: circle(20% at 10% 10%);
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 40px 0;
+}
+
+.container .card {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	/* background: rgba(255, 255, 255, 0.05); */
+    background: #8d776a;
+	margin: 20px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+}
+
+.container .card .content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+}
+
+.container .card:hover .content {
+	transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
+
+.container .card .content .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 25px;
+	text-align: center;
+	margin: 20px 0 10px;
+	line-height: 1.1em;
+}
+
+.container .card .content .contentBx h3 span {
+	font-size: 12px;
+	font-weight: 300;
+	text-transform: initial;
+    color: white;
+}
+
+.container .card .sci {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+}
+
+.sci {
+    padding: 0;
+}
+
+.container .card .sci li {
+	list-style: none;
+	margin: 0 10px;
+	transform: translateY(40px);
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.container .card:hover .sci li {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.container .card .sci li a {
+	color: #fff;
+	font-size: 20px;
+}
+
+.noLined {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+
+}
+
+.noLined:hover {
+    color: white;
+}
+
+.containerHome{
+margin-bottom: 300px;
+}
+
+/* PHOTOS */
+ .borderedForm {
+    border: 5px solid;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto;
+    padding-right: 400px;
+ }
+
+ .castomHelp {
+    text-align: center; 
+    margin-top: 20px; 
+    font-size: 2.5rem;
+    font-family: Rubik,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+ }
+
+ .kawai{
+    position: absolute;
+    z-index: 10;
+    width: 350px;
+    height: 350px;
+    right: 2%;
+    bottom: -21px;
+ }

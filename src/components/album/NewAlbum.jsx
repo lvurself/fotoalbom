@@ -23,24 +23,26 @@ export default function NewAlbum() {
     });
   };
   return (
-    <div className="container">
+    <>
       <h1>Create New Album</h1>
-      <form onSubmit={submitHandler}>
-        <div className="input-group mb-3">
-          <input name="title" type="text" aria-label="nameAlbum" className="form-control" />
-        </div>
-        <div>
+      <div className="container">
+        <form onSubmit={submitHandler}>
           <div className="input-group mb-3">
-            <input name="description" type="text" aria-label="coments" className="form-control " />
+            <input name="title" type="text" aria-label="nameAlbum" className="form-control" />
           </div>
-        </div>
-        <div className="input-group">
-          <input name="images" onChange={fileChangeHandler} type="file" multiple className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
-        </div>
-        <div className="button-group mb-3">
-          <button type="submit" className="btn btn-outline-secondary">Add Album</button>
-        </div>
-      </form>
-    </div>
+          <div>
+            <div className="input-group mb-3">
+              <input name="description" type="text" aria-label="coments" className="form-control " />
+            </div>
+          </div>
+          <div className="input-group">
+            <input name="images" onChange={fileChangeHandler} type="file" multiple className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
+          </div>
+          <div className="button-group mb-3">
+            <button type="submit" className="btn btn-outline-secondary">Add Album</button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }

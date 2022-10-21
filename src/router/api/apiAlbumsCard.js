@@ -22,7 +22,9 @@ router.get('/home/myalbums', async (req, res) => {
 router.get('/home/album/:albumId', async (req, res) => {
   const { albumId } = req.params;
   const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
+
   res.json(oneAlbumPhoto);
+
   // console.log(oneAlbumPhoto, 'hfhfhhfhfhfhfhf');
   //   console.log('hfsahjfgahjgfjhasgfhasjfgasjf', oneAlbumPhoto);
   //   console.log('=========>', req.session);
