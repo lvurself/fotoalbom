@@ -47,13 +47,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-
-app.use('/api', apiAlbumsCard);
-
 app.use('/auth', regAndAuth);
-
+app.use('/api', apiAlbumsCard);
 app.use('/image', uploadImage);
-
 app.use(authCheck);
 
 app.listen(PORT, () => {

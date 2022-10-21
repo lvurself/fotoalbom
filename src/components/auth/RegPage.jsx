@@ -14,9 +14,12 @@ export default function RegPage({ setCurrentUser }) {
     });
 
     if (response.ok) {
+      console.log('in ok response');
       const data = await response.json();
       setCurrentUser(data);
       navigate('/home');
+    } else {
+      navigate('/reg');
     }
   };
 
