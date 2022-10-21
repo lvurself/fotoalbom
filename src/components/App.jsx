@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './other/Navbar';
 import StartPage from './main/StartPage';
@@ -9,11 +9,14 @@ import ScrollToTop from './ScrollToTop';
 import PhotoList from './photo/PhotoList';
 import NewAlbum from './album/NewAlbum';
 import MyAlbums from './album/MyAlbums';
+import MyPhotoList from './photo/MyPhotoList';
 
 export default function App({
-  user, albums, photos, oneAlbumPhoto,
+  user, albums, photos, oneAlbumPhoto, myAllAlbums,
 }) {
   const [currentUser, setCurrentUser] = useState(user || null);
+  const [currentAlbums, setCurrentAlbums] = useState(albums || []);
+  console.log(albums);
   return (
     <>
       <ScrollToTop />
@@ -25,7 +28,9 @@ export default function App({
         <Route path="/home" element={<HomePage allAlbums={albums} allPhotos={photos} />} />
         <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
         <Route path="/home/newalbum" element={<NewAlbum />} />
-        <Route path="/home/myalbums" element={<MyAlbums allAlbums={albums} />} />
+        <Route path="/home/myalbums" element={<MyAlbums myAllAlbums={myAllAlbums} />} />
+        <Route path="/home/myalbums/:albumId" element={<MyPhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
+
       </Routes>
       <footer className="footer">
         <div className="vertical">

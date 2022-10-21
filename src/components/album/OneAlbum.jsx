@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function OneAlbum({ album, allPhotos }) {
+export default function OneAlbum({ album }) {
   console.log('=======>', album);
   //   console.log('qwertyu:', album);
   // const [photos, setPhotos] = useState(null);
