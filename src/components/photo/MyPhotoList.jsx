@@ -43,3 +43,6 @@ export default function MyPhotoList({ oneAlbumPhoto }) {
     </div>
   );
 }
+
+
+
