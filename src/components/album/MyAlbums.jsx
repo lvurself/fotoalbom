@@ -9,20 +9,38 @@ export default function MyAlbums({ setMyAllCards, myAllCards }) {
       .then((data) => setMyAllCards(data));
   }, []);
   return (
-    <div className="container">
+    <>
+      <h1 className="aboutTitle">My Albums</h1>
+      <div className="container">
+        <div style={{
+          marginBottom: '100px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly',
+        }}
+        >
+          {myAllCards?.map((el) => (
+            <section>
+              <div className="container" key={el.id}>
+                <div className="card">
+                  <div className="content">
+                    <div className="imgBx">
+                      <img src="https://www.interfax.ru/ftproot/photos/photostory/2022/04/29/week/week7_1100.jpg" alt="..." />
+                    </div>
+                    <div className="contentBx">
+                      <h3 className="titleAlbum">{el?.name}</h3>
+                      <span className="descriptionAlbum">{el?.description}</span>
+                    </div>
+                  </div>
+                  <ul className="sci" style={{ textAlign: 'center' }}>
+                    <li style={{ textAlign: 'center' }}>
+                      <Link className="noLined" to={`/home/myalbums/${el?.id}`}>View</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
-      <h1>My Albums111</h1>
-      {myAllCards?.map((el) => (
-        <div key={el.id}>
-          <div className="card" style={{ width: '18rem' }}>
-            <img src="https://www.interfax.ru/ftproot/photos/photostory/2022/04/29/week/week7_1100.jpg" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{el?.name}</h5>
-              <Link to={`/home/myalbums/${el?.id}`} className="btn btn-light">View</Link>
-            </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 }
