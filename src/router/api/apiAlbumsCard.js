@@ -6,7 +6,6 @@ import { Photo, Album } from '../../db/models';
 const router = express.Router();
 
 router.get('/home', async (req, res) => {
-//   const { albumsId } = req.params;
   const albums = await Album.findAll({ where: { private: false } });
   res.json(albums);
 });
@@ -15,23 +14,29 @@ router.get('/home/photos', async (req, res) => {
   res.json(photos);
 });
 // where: { albumid: albumsId } }
-router.get('/home/myalbums/', async (req, res) => {
-  const { userId } = req.params;
-  const myalbums = await Album.findAll({ where: { userid: userId } });
+router.get('/home/myalbums', async (req, res) => {
+  const myalbums = await Album.findAll({ where: { userid: String(res.locals.user.id) } });
   res.json(myalbums);
 });
 
 router.get('/home/album/:albumId', async (req, res) => {
   const { albumId } = req.params;
   const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
-  console.log(oneAlbumPhoto, 'hfhfhhfhfhfhfhf');
+  res.json(oneAlbumPhoto);
+  // console.log(oneAlbumPhoto, 'hfhfhhfhfhfhfhf');
   //   console.log('hfsahjfgahjgfjhasgfhasjfgasjf', oneAlbumPhoto);
   //   console.log('=========>', req.session);
 });
 
+router.get('/home/myalbums/:albumId', async (req, res) => {
+  const { albumId } = req.params;
+  const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
+  res.json(oneAlbumPhoto);
+});
+
 router.route('/takephoto/:link')
   .get(async (req, res) => {
-    console.log('pppppp', (path.join(__dirname, `../../../storage/images/${req.params.link}`)));
+    // console.log('pppppp', (path.join(__dirname, `../../../storage/images/${req.params.link}`)));
     res.sendFile(path.join(__dirname, `../../../storage/images/${req.params.link}`));
   });
 
