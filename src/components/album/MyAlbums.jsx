@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function MyAlbums({ myAllAlbums }) {
-  console.log('myAllAlbums', myAllAlbums);
+  // console.log('myAllAlbums', myAllAlbums);
   return (
     <div className="container">
 
