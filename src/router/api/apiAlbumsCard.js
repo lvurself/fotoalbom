@@ -36,6 +36,23 @@ router.get('/home/myalbums/:albumId', async (req, res) => {
   res.json(oneAlbumPhoto);
 });
 
+router.patch('/home/myalbums/:albumId/edit', async (req, res) => {
+  const { albumId } = req.params;
+  console.log(req.body);
+  const edit = Album.update({
+    name: req.body.name,
+    description: req.body.description,
+    private: req.body.private,
+  }, { where: { id: albumId } });
+  res.json(edit);
+});
+
+router.delete('/home/myalbums/:albumId/delete', async (req, res) => {
+  const { albumId } = req.params;
+  await Album.destroy({ where: { id: albumId } });
+  res.sendStatus(200);
+});
+
 router.route('/takephoto/:link')
   .get(async (req, res) => {
     // console.log('pppppp', (path.join(__dirname, `../../../storage/images/${req.params.link}`)));

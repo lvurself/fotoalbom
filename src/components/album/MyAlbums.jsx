@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function MyAlbums({ myAllAlbums }) {
-  console.log('myAllAlbums', myAllAlbums);
-  const [myAllCards, setMyAllCards] = useState(myAllAlbums || null);
-
+export default function MyAlbums({ setMyAllCards, myAllCards }) {
+  console.log('myAllAlbums', myAllCards);
   useEffect(() => {
     fetch('/api/home/myalbums')
       .then((res) => res.json())
