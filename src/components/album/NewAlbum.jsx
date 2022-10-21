@@ -37,6 +37,31 @@ export default function NewAlbum() {
         <div className="input-group">
           <input name="images" onChange={fileChangeHandler} type="file" multiple className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
         </div>
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="flexRadioDefault1">
+            <input
+              value="true"
+              name="private"
+              className="form-check-input"
+              type="radio"
+              id="flexRadioDefault1"
+            />
+            Private
+          </label>
+        </div>
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="flexRadioDefault2">
+            <input
+              value="false"
+              name="private"
+              className="form-check-input"
+              type="radio"
+              id="flexRadioDefault2"
+              checked
+            />
+            Public
+          </label>
+        </div>
         <div className="button-group mb-3">
           <button type="submit" className="btn btn-outline-secondary">Add Album</button>
         </div>

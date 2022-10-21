@@ -13,6 +13,7 @@ router.post('/photo', upload.array('images', 10), async (req, res) => {
     name: req.body.title,
     description: req.body.description,
     userid: req.session.user.id,
+    private: req.body.private,
   });
 
   (req.files).forEach((element) => {

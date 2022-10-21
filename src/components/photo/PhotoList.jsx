@@ -25,11 +25,11 @@ export default function PhotoList({ oneAlbumPhoto }) {
           {photos?.map((el, i) => (
             (i === 0) ? (
               <div className="carousel-item active" key={el.id}>
-                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '500px', height: '300px' }} />
               </div>
             ) : (
               <div className="carousel-item" key={el.id}>
-                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '300px', height: '500px' }} />
+                <img src={`http://localhost:3000/api/takephoto/${el.name}`} className="d-block w-100" alt="..." style={{ width: '500px', height: '300px' }} />
               </div>
             )
           ))}
