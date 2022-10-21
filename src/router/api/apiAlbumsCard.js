@@ -22,7 +22,9 @@ router.get('/home/myalbums', async (req, res) => {
 router.get('/home/album/:albumId', async (req, res) => {
   const { albumId } = req.params;
   const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
+
   res.json(oneAlbumPhoto);
+
   // console.log(oneAlbumPhoto, 'hfhfhhfhfhfhfhf');
   //   console.log('hfsahjfgahjgfjhasgfhasjfgasjf', oneAlbumPhoto);
   //   console.log('=========>', req.session);
@@ -32,6 +34,23 @@ router.get('/home/myalbums/:albumId', async (req, res) => {
   const { albumId } = req.params;
   const oneAlbumPhoto = await Photo.findAll({ where: { albumid: albumId } });
   res.json(oneAlbumPhoto);
+});
+
+router.patch('/home/myalbums/:albumId/edit', async (req, res) => {
+  const { albumId } = req.params;
+  console.log(req.body);
+  const edit = Album.update({
+    name: req.body.name,
+    description: req.body.description,
+    private: req.body.private,
+  }, { where: { id: albumId } });
+  res.json(edit);
+});
+
+router.delete('/home/myalbums/:albumId/delete', async (req, res) => {
+  const { albumId } = req.params;
+  await Album.destroy({ where: { id: albumId } });
+  res.sendStatus(200);
 });
 
 router.route('/takephoto/:link')

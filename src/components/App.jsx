@@ -17,6 +17,8 @@ export default function App({
   const [currentUser, setCurrentUser] = useState(user || null);
   const [currentAlbums, setCurrentAlbums] = useState(albums || []);
   console.log(albums);
+  const [myAllCards, setMyAllCards] = useState(myAllAlbums || null);
+
   return (
     <>
       <ScrollToTop />
@@ -28,8 +30,8 @@ export default function App({
         <Route path="/home" element={<HomePage allAlbums={albums} allPhotos={photos} />} />
         <Route path="/home/album/:albumId" element={<PhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
         <Route path="/home/newalbum" element={<NewAlbum />} />
-        <Route path="/home/myalbums" element={<MyAlbums myAllAlbums={myAllAlbums} />} />
-        <Route path="/home/myalbums/:albumId" element={<MyPhotoList oneAlbumPhoto={oneAlbumPhoto} allAlbums={albums} />} />
+        <Route path="/home/myalbums" element={<MyAlbums myAllCards={myAllCards} setMyAllCards={setMyAllCards} />} />
+        <Route path="/home/myalbums/:albumId" element={<MyPhotoList oneAlbumPhoto={oneAlbumPhoto} myAllAlbums={myAllAlbums} />} />
 
       </Routes>
       <footer className="footer">
