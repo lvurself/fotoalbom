@@ -11,7 +11,7 @@ export default function MyAlbums({ setMyAllCards, myAllCards }) {
   return (
     <>
       <h1 className="aboutTitle">My Albums</h1>
-      <div className="container">
+      <div className="container" style={{ marginBottom: '600px' }}>
         <div style={{
           marginBottom: '100px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly',
         }}

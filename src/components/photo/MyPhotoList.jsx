@@ -43,6 +43,7 @@ export default function MyPhotoList({ myAllAlbums, oneAlbumPhoto }) {
       .then((data) => {
         setThisAlbum(data);
         setInputs({});
+        navigate('/home/myalbums');
       });
   };
   const deleteHandler = async () => {
@@ -116,7 +117,7 @@ export default function MyPhotoList({ myAllAlbums, oneAlbumPhoto }) {
           <button onClick={editHandler} type="submit" className="btn btn-outline-warning">Изменить</button>
         </>
       )
-        : (<button onClick={clickHandler} type="submit" className="btn btn-outline-info">Info</button>
+        : (<button onClick={clickHandler} type="submit" className="btn btn-outline-info">Изменить</button>
         )}
 
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">

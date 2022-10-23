@@ -26,16 +26,16 @@ export default function NewAlbum() {
   };
   return (
     <>
-      <h1>Create New Album</h1>
-      <div className="container">
+      <h1 className="aboutTitle">Create New Album</h1>
+      <div className="container" style={{ marginBottom: '400px' }}>
         <form onSubmit={submitHandler}>
           <div className="input-group mb-3">
-            <input name="title" type="text" aria-label="nameAlbum" className="form-control" />
+            <input placeholder="Title" name="title" type="text" aria-label="nameAlbum" className="form-control" />
           </div>
 
           <div>
             <div className="input-group mb-3">
-              <input name="description" type="text" aria-label="coments" className="form-control " />
+              <input placeholder="Description" name="description" type="text" aria-label="coments" className="form-control " />
             </div>
           </div>
           <div className="input-group">

@@ -34,7 +34,7 @@ export default function Layout({ initState }) {
         <script defer src="/js/vendor.js" />
 
         <script src="/js/scripts.js" />
-        <title>TEMPLATE</title>
+        <title>ELBRUS/ALBUMS</title>
       </head>
       <body>
         <div id="root">

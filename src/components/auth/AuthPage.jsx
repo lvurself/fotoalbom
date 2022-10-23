@@ -42,7 +42,7 @@ export default function AuthPage({ setCurrentUser }) {
               <input name="password" type="password" placeholder="Password" className="form__input" />
             </div>
 
-            <button className="buton" type="submit">Register</button>
+            <button className="buton" type="submit">Log in</button>
           </form>
         </div>
       </div>

@@ -37,7 +37,7 @@ router.get('/home/myalbums/:albumId', async (req, res) => {
   res.json(oneAlbumPhoto);
 });
 
-router.patch('/home/myalbums/:albumId/edit', restriction, async (req, res) => {
+router.patch('/home/myalbums/:albumId/edit', async (req, res) => {
   const { albumId } = req.params;
   console.log(req.body);
   const edit = Album.update({
@@ -48,7 +48,7 @@ router.patch('/home/myalbums/:albumId/edit', restriction, async (req, res) => {
   res.json(edit);
 });
 
-router.delete('/home/myalbums/:albumId/delete', restriction, async (req, res) => {
+router.delete('/home/myalbums/:albumId/delete', async (req, res) => {
   const { albumId } = req.params;
   await Album.destroy({ where: { id: albumId } });
   res.sendStatus(200);
